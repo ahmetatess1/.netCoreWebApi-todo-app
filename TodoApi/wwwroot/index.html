@@ -1,0 +1,165 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        ul li.checked {
+            background: #ccc;
+            color: #fff;
+            text-decoration: line-through;
+        }
+        #spoiler {
+            display: none;
+        }
+
+        .close1 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 12px 16px 12px 16px;
+        }
+
+        .edit {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 15px 40px 12px 16px;
+        }
+
+        #deleteAll {
+            position: absolute;
+            right: 5px;
+            top: 10px;
+        }
+
+        #counter {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 mt-5">
+
+                <div class="card">
+                    <div class="card-body">
+                        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                            <div class="input-group">
+                                <input type="text" id="add-name" class="form-control" title="title">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit" id="btnCreate">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="card mt-3">
+                    <div class="card-header">
+                        My List : <p id="counter"></p>
+                        <button id="deleteAll" class="btn btn-danger btn-sm">
+                            Save Changes
+                        </button>
+                    </div>
+                    <form class="my-form">
+                        <div id="spoiler">
+
+                            <div class="input-group">
+                                <input type="hidden" id="edit-id">
+                                <input type="text" id="edit-name" class="form-control">
+                                <input class="btn btn-outline-secondary" type="submit" value="Save">
+                                <a class="btn btn-outline-secondary" onclick="closeInput()" aria-label="Close">&#10006;</a>
+                            </div>
+
+                        </div>
+                        <ul id="myList" class="list-group list-group-flush">
+                        </ul>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+
+</html>
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-do CRUD</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-do CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="New to-do">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="my-form">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Is Complete</th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tbody id="todos"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>-->
